@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+
+  int computer, player;
+  
+  // Tạo seed ngẫu nhiên
+  srand(time(NULL));
+
+  // Tạo số ngẫu nhiên 0-2 cho máy tính
+  computer = rand() % 3; 
+
+  printf("Kéo búa bao! \n");
+
+  // Nhập lựa chọn của người chơi
+  printf("Nhập 0 cho Kéo, 1 cho Búa, 2 cho Bao: ");
+  scanf("%d", &player);
+
+  // Kiểm tra kết quả
+  if (computer == player) {
+    printf("Hòa nhau!\n");
+  }
+  else if (computer == 0 && player == 1 || 
+           computer == 1 && player == 2 ||
+           computer == 2 && player == 0) {
+    printf("Bạn thắng!\n");
+  }
+  else {
+    printf("Máy thắng!\n");
+  }
+
+  return 0;
+}
